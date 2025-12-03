@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register - Kasir Mini</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Registrasi Akun Kasir</h2>
+
+    <input id="reg-username" placeholder="Username" />
+    <input id="reg-password" placeholder="Password" type="password" />
+
+    <button onclick="register()">Daftar & Masuk</button>
+
+    <p style="margin-top:12px; font-size:14px;">
+      Sudah punya akun? <a href="kasir.html" onclick="event.preventDefault(); autoLogin()">Langsung masuk (auto)</a>
+    </p>
+
+    <p style="margin-top:14px; font-size:13px; color:#666;">
+      Catatan: akun disimpan di localStorage (hanya demo).
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
