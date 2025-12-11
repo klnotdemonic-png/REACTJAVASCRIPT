@@ -1,0 +1,26 @@
+.alert {
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+/* success */
+.success {
+  background-color: #16a34a;
+  border: 2px solid #15803d;
+}
+
+/* warning */
+.warning {
+  background-color: #f59e0b;
+  border: 2px solid #d97706;
+}
+
+/* error */
+.error {
+  background-color: #dc2626;
+  border: 2px solid #b91c1c;
+}
