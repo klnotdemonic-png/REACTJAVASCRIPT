@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Message For You</title>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f7;
+    color: #222;
+    margin: 0;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+  }
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    font-weight: 600;
+    color: #111;
+  }
+  label {
+    font-size: 14px;
+    margin-top: 14px;
+    display: block;
+    font-weight: 500;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    margin-top: 6px;
+    background: #fafafa;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #181818;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  button:hover {
+    background: #000;
+  }
+  .preview {
+    display: none;
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+  .preview img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 14px;
+  }
+  .nama {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .pesan {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Send Love</h2>
+
+  <label>Nama Panggilan</label>
+  <input id="name" placeholder="contoh: sayang, babe, my girl">
+
+  <label>Pesan</label>
+  <textarea id="pesan" rows="4" placeholder="tulis pesan estetik untuk dia..."></textarea>
+
+  <label>Foto</label>
+  <input type="file" id="foto" accept="image/*">
+
+  <button onclick="show()">Tampilkan</button>
+
+  <div class="preview" id="hasil">
+    <img id="imgPreview">
+    <div class="nama" id="namaOut"></div>
+    <div class="pesan" id="pesanOut"></div>
+  </div>
+</div>
+
+<script>
+function show() {
+  const nama = document.getElementById("name").value || "Untuk Kamu";
+  const pesan = document.getElementById("pesan").value || "Aku cuma mau bilang… makasih ya udah ada buat aku.";
+  const foto = document.getElementById("foto").files[0];
+
+  document.getElementById("hasil").style.display = "block";
+  document.getElementById("namaOut").innerText = nama;
+  document.getElementById("pesanOut").innerText = pesan;
+
+  if (foto) {
+    const reader = new FileReader();
+    reader.onload = e => document.getElementById("imgPreview").src = e.target.result;
+    reader.readAsDataURL(foto);
+  }
+}
+</script>
+
+</body>
+</html>
